@@ -1,0 +1,15 @@
+# Crear carptea
+C:
+mkdir BEDU
+cd C:/BEDU
+mkdir PROYECTO
+cd C:/BEDU/PROYECYO
+mkdir BD #Carpeta de base de datos
+cd C/:BEDU/PROYECTO/BD
+
+#Yo tenía ya mi conjunto de datos en un disco duro, lo voy a copiar en la carpeta de mi proyecyo
+cp -r E:/Sincomprimir/03 C:/BEDU/PROYECTO/BD/03
+
+#Crear un respaldo en disco D
+cd D:/BEDU/PROYECTO/BD/
+cp -r C:/BEDU/PROYECTO/BD/03 D:/BEDU/PROYECTO/BD/03
