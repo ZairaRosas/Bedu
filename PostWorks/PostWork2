@@ -1,6 +1,8 @@
 #Tengo 2 archivos de tipo .csv que debo concatenar:
 cd C:/BEDU/PROYECTO/BD
 mkidr BD_CONCAT
+ls
+#03/  BD_CONCAT/
 cd C:/BEDU/PROYED/03
 cat part-00001-c0b87107-dad2-4917-9bb8-c8748d43a6c8-c000.csv part-00002-c0b87107-dad2-4917-9bb8-c8748d43a6c8-c000.csv > D:/BEDU/PROYECTO/BD/BD_CONCAT/part1_2.csv
 
@@ -35,4 +37,18 @@ head part1_2_heads.csv
 wc part1_2_heads.csv
 # 18162524   18162534 3087613854 part1_2_heads.csv
 
-# No es necesario para mi, realizar consultas
+#Cuántos dispositivos Android hay?
+grep Android part1_2_heads.csv | wc
+#6551317 6551317 1136343065
+
+#Cuántos dispositvos iOS hay?
+grep iOS part1_2_heads.csv | wc
+#11611206 11611206 1951270718
+
+#Cuántos dispositvos hay de México?
+grep .*,.*,.*,.*,.*,.*,.*,.*,MX part1_2_heads.csv | wc
+#      0       0       0
+
+#Cuántos dispostivos hay de EU?
+grep .*,.*,.*,.*,.*,.*,.*,.*,US part1_2_heads.csv | wc
+#18162523 18162523 3087613783
