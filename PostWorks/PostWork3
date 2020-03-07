@@ -1,0 +1,30 @@
+#Los datos están en la carpeta llamada "DATOS" dentro de este repositorio.
+#Dentro de GitBash ---> Explorar el arcihivo "coronavirus.csv"
+
+$cd D:/BEDU/SESION/BD
+$head coronavirus.csv
+
+#En Miniconda. Conexión a MariaDB
+mycli -u root -h ec2-54-213-51-169.us-west-2.compute.amazonaws.com --local-infile TRUE
+pasword: bedu0583
+
+use ANDREA;
+CREATE TABLE coronavirus(
+        id int,
+        fecha varchar(15),
+        resumen varchar(200),
+        lugar varchar(50),
+        pais varchar(25),
+        genero varchar(10),
+        edad int);
+        
+LOAD DATA LOCAL INFILE "d:/BEDU/SESION3/BD/coronavirus.csv" INTO TABLE coronavirus FIELDS terminated by ',';
+
+#Verificar que la importación esté correcta
+DESCRIBE coronavirus;
+SELECT * FROM coronavirus;
+
+#Comenzar la exploración
+SELECT * FROM coronavirus WHERE genero = 'female';
+SELECT * FROM coronavirus WHERE genero = 'male';
+SELECT * FROM coronavirus WHERE edad >= 18;
