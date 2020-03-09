@@ -1,7 +1,7 @@
 #Los datos están en la carpeta llamada "DATOS" dentro de este repositorio.
 #Dentro de GitBash ---> Explorar el arcihivo "coronavirus.csv"
 
-$cd D:/BEDU/SESION/BD
+$cd D:/BEDU/SESION3/BD
 $head coronavirus.csv
 
 #En Miniconda. Conexión a MariaDB
