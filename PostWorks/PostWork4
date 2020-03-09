@@ -1,0 +1,33 @@
+#abrir directorio de trabajo en Anaconda D:/BEDU/SESION4/BD
+
+mycli -u root -h ec2-54-213-51-169.us-west-2.compute.amazonaws.com --local-infile TRUE
+pasword: bedu0583
+
+use ANDREA;
+
+#Analizar el contenido de la tabla
+DESCRIBE coronavirus;
+SELECT * FROM coronavirus;
+
+#contar los registros de la tabla
+SELECT COUNT(*) FROM coronavirus;
+
+#buscar los infectados de coronavirus mayores de edad
+SELECT * FROM coronavirus WHERE edad >= 18;
+
+#contar los infectados de coronavirus mayores de edad
+SELECT COUNT(*) FROM coronavirus WHERE edad >= 18;
+
+#contar los infectados de coronavirus que sean menores de edad y hombres
+SELECT COUNT(*) FROM coronavirus WHERE edad <= 18 AND genero = 'male';
+
+#contar los infectados de coronavirus que sean menores de edad y mujeres
+SELECT COUNT(*) FROM coronavirus WHERE edad <= 18 AND genero = 'female';
+
+#contar los infectados de coronavirus que sean menores de edad y mujeres y que no vivan en China
+SELECT COUNT(*) FROM coronavirus WHERE edad <= 18 AND genero = 'male' and pais <> 'CHINA';
+
+#Guardar archivo en formato csv
+\T csv
+\o coronavirus_mujeres_menores_noChina.csv
+
