@@ -1,0 +1,7 @@
+#Crear un cluster en Mongo DB Atlas:
+mongodb+srv://Andrea:<contraseña>@andrea-ylnkm.mongodb.net/test
+
+#Crear DATABASE > DATABASE NAME [ANDREA] > COLLECTION NAME [CORONAVIRUS_API] > CREATE DATABASE 
+
+#Copiar los datos de https://api.covid19api.com/summary en un editor de texto u guardarlo en formato JSON
+#Importar el archivo JSON
