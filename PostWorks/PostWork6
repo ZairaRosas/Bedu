@@ -7,7 +7,28 @@ Filter: { "summary": /First confirmed/ } #Result: 20
 #¿Cuáles son los documentos que tienen mayor o menor cantidad en algún campo? [Edad]
 Filter: {"gender": { $gte: "18"} } #Result: 1085
 
-#¿Cuál es el promedio de todos los valores de algún campo como edad, precio, cantidad?[Edad] Realizar esto desde "aggregations".
-#No tengo listas dentro de mi base de datos
+#¿Cuál es la cantidad de documentos por tipo de producto o por cierta fecha? [Genero]
+Filter: {"gender": { $gte: "18"} } #Result: 1085
 
-#¿Cuál es la cantidad de documentos por tipo de producto o por cierta fecha?
+¿Cuántos infectados de COVID son de China?
+Filter: {"city": "Shanghai"}  #Result: 197
+
+#¿Cuántos enfermos de COVID hay por genero? [Desde la pestaña aggrregaciones > group]
+{
+  _id: "$gender",
+  total_gen: {
+    $sum: 1
+  }
+}
+
+
+#¿Cuál es la edad mínimia y máxima de infectados? [Desde la pestaña aggrregaciones > group]
+{
+  _id: "$null",
+  edad_min: {
+    $min: "$age"
+  },
+  edad_max: {
+    $max: "$age"
+  }
+}
