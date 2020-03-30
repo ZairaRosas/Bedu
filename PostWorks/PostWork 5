@@ -1,0 +1,27 @@
+#Crear directorios
+$ cd BEDU/
+$ mk dir SESION
+
+#Copiar archivos de la carpeta de sesión 
+$ cp BEDU/SESION3/coronavirus.csv /BEDU/SESION5
+
+#Abrin MongoDB y realizar conexión con la siguiente liga:
+mongodb://root:bedu0583@ec2-54-213-51-169.us-west-2.compute.amazonaws.com:27017/?authSource=admin&connectTimeoutMS=600000
+
+#Crear DATABASE > DATABASE NAME [ANDREA] > COLLECTION NAME [CORONAVIRUS] > CREATE DATABASE
+
+#Comenzar las consultas:
+#¿Cuántas infectados de coronavirus son mujeres?
+{"gender": "female"} #382
+
+#¿Cuántas infectados de coronavirus son hombres?
+{"gender": "male"} #520
+
+#¿Cuántas infectados de coronavirus son mayores de edad?
+{"gender": { $gte: "18"} } #1085
+
+#¿Cuántas infectados de coronavirus son menores de edad?
+{"gender": { $lt: "18"} } #No results
+
+¿Cuántos infectados de COVID son de Shanghai?
+{"city": "Shanghai"}  #2
