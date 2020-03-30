@@ -12,16 +12,16 @@ mongodb://root:bedu0583@ec2-54-213-51-169.us-west-2.compute.amazonaws.com:27017/
 
 #Comenzar las consultas:
 #¿Cuántas infectados de coronavirus son mujeres?
-{"gender": "female"} #382
+Filter: {"gender": "female"} #Result: 382
 
 #¿Cuántas infectados de coronavirus son hombres?
-{"gender": "male"} #520
+Filter: {"gender": "male"} #Result: 520
 
 #¿Cuántas infectados de coronavirus son mayores de edad?
-{"gender": { $gte: "18"} } #1085
+Filter: {"gender": { $gte: "18"} } #Result: 1085
 
 #¿Cuántas infectados de coronavirus son menores de edad?
-{"gender": { $lt: "18"} } #No results
+Filter: {"gender": { $lt: "18"} } #Result: No results
 
 ¿Cuántos infectados de COVID son de Shanghai?
-{"city": "Shanghai"}  #2
+Filter: {"city": "Shanghai"}  #Result: 2
