@@ -1,0 +1,13 @@
+#Entrar al servidor AWS en MongoDB Compass
+#Responder la siguientes preguntas de la base de datos elegida [coronavirus]:
+
+#¿Cuál es la lista de todos los documentos que incluyan el "Firts confirmed" en algún campo [summary]?
+Filter: { "summary": /First confirmed/ } #Result: 20
+
+#¿Cuáles son los documentos que tienen mayor o menor cantidad en algún campo? [Edad]
+Filter: {"gender": { $gte: "18"} } #Result: 1085
+
+#¿Cuál es el promedio de todos los valores de algún campo como edad, precio, cantidad?[Edad] Realizar esto desde "aggregations".
+#No tengo listas dentro de mi base de datos
+
+#¿Cuál es la cantidad de documentos por tipo de producto o por cierta fecha?
